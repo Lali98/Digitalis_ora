@@ -74,7 +74,7 @@ body {
     stroke-dashoffset: 510;
 }
 
-.circle{
+.dots {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -84,11 +84,41 @@ body {
     z-index: 10;
 }
 
-.circle::before {
+.dots::before {
     content: '';
     position: absolute;
+    top: -3px;
     width: 15px;
     height: 15px;
     background: var(--clr);
     border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),
+    0 0 40px var(--clr),
+    0 0 60px var(--clr),
+    0 0 80px var(--clr);
+}
+
+.timeBx {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    font-family: Consolas, serif;
+    gap: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.timeBx #hours::after, .timeBx #minutes::after {
+    content: ':';
+    position: absolute;
+}
+
+.timeBx div {
+    color: var(--c);
+    text-shadow: 0 0 10px var(--c),
+    0 0 20px var(--c);
 }
